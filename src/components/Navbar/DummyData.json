@@ -1,0 +1,187 @@
+[
+    {
+      "id": 1,
+      "name": "Fruits & Vegetables",
+      "subcategories": [
+        {
+          "id": 101,
+          "name": "Fresh Fruits"
+        },
+        {
+          "id": 102,
+          "name": "Fresh Vegetables"
+        },
+        {
+          "id": 103,
+          "name": "Organic Produce"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Dairy & Eggs",
+      "subcategories": [
+        {
+          "id": 201,
+          "name": "Milk"
+        },
+        {
+          "id": 202,
+          "name": "Cheese"
+        },
+        {
+          "id": 203,
+          "name": "Eggs"
+        },
+        {
+          "id": 204,
+          "name": "Butter & Margarine"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Meat & Seafood",
+      "subcategories": [
+        {
+          "id": 301,
+          "name": "Fresh Meat"
+        },
+        {
+          "id": 302,
+          "name": "Frozen Meat"
+        },
+        {
+          "id": 303,
+          "name": "Seafood"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Bakery & Bread",
+      "subcategories": [
+        {
+          "id": 401,
+          "name": "Fresh Bread"
+        },
+        {
+          "id": 402,
+          "name": "Pastries"
+        },
+        {
+          "id": 403,
+          "name": "Cakes"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Pantry",
+      "subcategories": [
+        {
+          "id": 501,
+          "name": "Canned Goods"
+        },
+        {
+          "id": 502,
+          "name": "Pasta & Rice"
+        },
+        {
+          "id": 503,
+          "name": "Condiments & Sauces"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Beverages",
+      "subcategories": [
+        {
+          "id": 601,
+          "name": "Coffee & Tea"
+        },
+        {
+          "id": 602,
+          "name": "Juice"
+        },
+        {
+          "id": 603,
+          "name": "Soft Drinks"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Snacks",
+      "subcategories": [
+        {
+          "id": 701,
+          "name": "Chips & Crackers"
+        },
+        {
+          "id": 702,
+          "name": "Candy"
+        },
+        {
+          "id": 703,
+          "name": "Cookies"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Frozen",
+      "subcategories": [
+        {
+          "id": 801,
+          "name": "Frozen Meals"
+        },
+        {
+          "id": 802,
+          "name": "Frozen Vegetables"
+        },
+        {
+          "id": 803,
+          "name": "Ice Cream"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Personal Care",
+      "subcategories": [
+        {
+          "id": 901,
+          "name": "Shampoo & Conditioner"
+        },
+        {
+          "id": 902,
+          "name": "Body Wash"
+        },
+        {
+          "id": 903,
+          "name": "Oral Care"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Household",
+      "subcategories": [
+        {
+          "id": 1001,
+          "name": "Cleaning Supplies"
+        },
+        {
+          "id": 1002,
+          "name": "Laundry Detergent"
+        },
+        {
+          "id": 1003,
+          "name": "Paper Products"
+        }
+      ]
+    }
+  ]
+  
