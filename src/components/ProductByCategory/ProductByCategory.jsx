@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import slugify from "slugify";
 
 const ProductByCategory = ({ Datas }) => {
   const { name, id } = useParams();
@@ -20,7 +21,11 @@ const ProductByCategory = ({ Datas }) => {
           </h2>
           <div className="grid grid-cols-7 gap-4">
             {filteredProducts.map((product) => (
-              <div
+              <Link
+                to={`/category/${slugify(product.category, {
+                  lower: true,
+                  strict: true,
+                })}/${slugify(product.name, { lower: true })}`}
                 key={product.id}
                 className="h-auto relative border flex flex-col justify-between items-center"
                 style={{ height: "250px" }}
@@ -40,7 +45,7 @@ const ProductByCategory = ({ Datas }) => {
                 <button className="p-2 bg-emerald-300 w-full bottom-0">
                   Add
                 </button>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

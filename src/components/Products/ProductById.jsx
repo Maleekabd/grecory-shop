@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { formatCategory } from "../ProductByCategory/ProductByCategory";
 import slugify from "slugify";
 
@@ -16,23 +16,23 @@ const ProductById = ({ Datas }) => {
           item.name === formattedCategory && (
             <div key={item.id} className="p-5">
               <h1 className="font-normal text-sm p-5 px-0">
-                <a
-                  href={`/category/${slugify(item.category, {
+                <Link
+                  to={`/category/${slugify(item.category, {
                     lower: true,
                     strict: true,
                   })}`}
                 >
                   {item.category} &gt;{" "}
-                </a>
-                <a
+                </Link>
+                <Link
                   className={text_color}
-                  href={`/category/${slugify(item.category, {
+                  to={`/category/${slugify(item.category, {
                     lower: true,
                     strict: true,
                   })}/${slugify(item.name, { lower: true })}`}
                 >
                   {item.name}
-                </a>
+                </Link>
               </h1>
               <div className="flex justify-between w-full">
                 <figure className="grid grid-cols-3 w-full gap-y-2 gap-2">
