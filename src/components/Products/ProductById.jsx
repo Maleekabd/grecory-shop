@@ -25,6 +25,14 @@ const ProductById = ({ Datas }) => {
                   {item.category} &gt;{" "}
                 </Link>
                 <Link
+                  to={`/category/${slugify(item.category, {
+                    lower: true,
+                    strict: true,
+                  })}/${slugify(item.name, { lower: true })}`}
+                >
+                  {item.subcategory} &gt; {" "}
+                </Link>
+                <Link
                   className={text_color}
                   to={`/category/${slugify(item.category, {
                     lower: true,
