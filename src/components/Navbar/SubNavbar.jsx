@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+import slugify from "slugify";
 /* eslint-disable react/prop-types */
-const SubNavbar = ({ Datas }) => {
+export const SubNavbar = ({ Datas }) => {
   const newUnique = [...new Set(Datas.map((item) => item.category))];
 
   return (
@@ -8,7 +10,11 @@ const SubNavbar = ({ Datas }) => {
         {newUnique.map((item, index) => (
           <div key={index}>
             <li className="hover:text-emerald-300 transition-all duration-100 ease-in">
-              <a href={index}>{item}</a>
+              <Link
+                to={`/category/${slugify(item, { strict: true, lower: true })}`}
+              >
+                {item}
+              </Link>
             </li>
           </div>
         ))}
