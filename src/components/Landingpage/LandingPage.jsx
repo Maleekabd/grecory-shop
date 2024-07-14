@@ -21,7 +21,7 @@ export const LandingPage = () => {
 
 const LandingPage2 = () => {
   return (
-    <figure className="pt-8 gap-3 grid grid-cols-2">
+    <figure className="pt-8  gap-y-2 gap-2  grid grid-cols-2">
       <img
         className={`h-[30em] w-full row-span-2`}
         src="https://images.pexels.com/photos/7728347/pexels-photo-7728347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
