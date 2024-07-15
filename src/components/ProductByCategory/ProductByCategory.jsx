@@ -19,7 +19,7 @@ const ProductByCategory = ({ Datas }) => {
           <h2 className="pb-5 text-3xl">
             {formattedCategory.toLocaleUpperCase()}
           </h2>
-          <div className="grid grid-cols-7 gap-4">
+          <div className="grid grid-cols-5 gap-4">
             {filteredProducts.map((product) => (
               <Link
                 to={`/category/${slugify(product.category, {
@@ -27,24 +27,25 @@ const ProductByCategory = ({ Datas }) => {
                   strict: true,
                 })}/${slugify(product.name, { lower: true })}`}
                 key={product.id}
-                className="h-auto relative border flex flex-col justify-between items-center"
-                style={{ height: "250px" }}
+                className="hover:shadow-xl rounded-md flex justify-between flex-col h-auto relative border"
               >
-                <div className="flex flex-col items-start">
-                  <figure className="w-full">
-                    <img
-                      className="object-cover"
-                      style={{ height: "150px" }}
-                      src={product.image}
-                      alt={product.name}
-                    />
-                  </figure>
-                  <h1 className="p-2 text-sm">{product.name}</h1>
-                  <p className="p-2 pt-0 font-bold">$ {product.price}</p>
+                {/* <div className="flex flex-col items-start">
+                  <figure className="w-full"> */}
+                <img
+                  className="object-cover rounded-md"
+                  style={{ height: "150px" }}
+                  src={product.image}
+                  alt={product.name}
+                />
+                {/* </figure> */}
+                <h1 className="p-2 text-sm">{product.name}</h1>
+                <p className="p-2 pt-0 font-bold">$ {product.price}</p>
+                {/* </div> */}
+                <div className="m-3">
+                  <button className="rounded-md p-2 bg-emerald-600 text-white w-full bottom-0">
+                    Add
+                  </button>
                 </div>
-                <button className="p-2 bg-emerald-300 w-full bottom-0">
-                  Add
-                </button>
               </Link>
             ))}
           </div>

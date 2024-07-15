@@ -43,7 +43,7 @@ const ProductById = ({ Datas }) => {
                 </Link>
               </h1>
               <div className="flex justify-between w-full">
-                <figure className="grid grid-cols-3 w-full gap-y-2 gap-2">
+                <figure className="grid grid-cols-3 w-full gap-2">
                   <img
                     className="col-span-3 h-72 w-full"
                     src={item.image}
@@ -56,12 +56,14 @@ const ProductById = ({ Datas }) => {
 
                 {/*description */}
                 <div className="w-full">
-                  <div className="p-5 h-full">
-                    <div className="p-3 h-full flex flex-col justify-between">
+                  <div className="p-5  pt-0 h-full">
+                    <div className="p-3 pt-0 h-full flex flex-col justify-between">
                       <div>
                         <h1 className="text-xl">{item.name}</h1>
                         <h2 className="text-lg font-bold">$ {item.price}</h2>
                         <p>{item.description}</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique molestias repellendus a magni hic, nulla et reprehenderit doloribus consequatur voluptatem eos dolor nemo beatae tempore magnam, vel odit minima ipsum! Recusandae saepe eaque sed voluptatum aspernatur eveniet neque laudantium eum facilis porro ad ducimus at, ipsum dicta voluptatem vel, repudiandae aut in. Ea culpa quam blanditiis? Voluptatibus enim, porro, quasi excepturi voluptatem autem distinctio assumenda quos sapiente perferendis quae veritatis veniam error nobis vero placeat nulla magni odio officiis itaque magnam iste, fugiat eum. Aliquam accusamus quaerat iure dolorum recusandae unde! At quas dolor in architecto veniam et, non laudantium.
+                        </p>
                       </div>
                       <div className="flex items-center flex-col gap-1">
                         <button className="hover:bg-emerald-400 border border-emerald-300 w-full p-2">
