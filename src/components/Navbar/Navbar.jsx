@@ -7,9 +7,10 @@ import Input from "../Elements/Input";
 import Data from "../Products/DummyData.json";
 import "./Navbar.css";
 import SubNavbar from "./SubNavbar";
-import Grocery from "../../../public/grocery.png"
+import Grocery from "../../../public/grocery.png";
+import { Link } from "react-router-dom";
 
-const size = 25;
+const size = 35;
 
 export const Navbar = () => {
   return (
@@ -20,14 +21,34 @@ export const Navbar = () => {
         </a>
         <Input />
         <ul className="flex list-none gap-5">
-          <li>
-            <AiOutlineShoppingCart size={`${size}`} />
+          <li className="relative">
+            <span className="absolute w-5 h-5 bg-emerald-400 rounded-full -top-2 -right-2 text-center">0</span>
+            <AiOutlineShoppingCart className="" size={`${size}`} />
           </li>
-          <li>
+          <li className="cursor-pointer hover:text-emerald-400">
             <IoMdHeartEmpty size={`${size}`} />
           </li>
-          <li>
-            <IoPersonCircleOutline size={`${size}`} />
+          <li className="person hover:text-emerald-400">
+            {/* <Link to={`/login`}> */}
+            <IoPersonCircleOutline className="" size={`${size}`} />
+            {/* </Link> */}
+            <ul className="nav-child">
+              <li>
+                <Link className="link" to={`/my-profile`}>
+                  My Profile
+                </Link>
+              </li>
+              <li>
+                <Link className="link" to={`/dashboard`}>
+                  Dashboard
+                </Link>
+              </li>
+              <li>
+                <Link className="link" to={`/login`}>
+                  Login
+                </Link>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>

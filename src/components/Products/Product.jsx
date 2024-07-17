@@ -4,7 +4,6 @@ import { Link, useParams } from "react-router-dom";
 
 const Product = ({ Datas }) => {
   const { title } = useParams();
-  console.log(title);
 
   return (
     <section className="h-auto">
@@ -12,7 +11,7 @@ const Product = ({ Datas }) => {
         <div className="m-10">
           <h1 className="text-3xl">Products</h1>
           <div>
-            <ul className="grid sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-5 gap-3">
+            <ul className="grid min-[320px]:grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-5 gap-3">
               {Datas.map((item) => (
                 <Link
                   to={`/category/${slugify(item.category, {

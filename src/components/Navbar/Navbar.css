@@ -1,6 +1,55 @@
 .input {
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.75);
-    border: 1px solid rgba(209, 213, 219, 0.3);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+.person {
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-child {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  min-width: auto;
+  padding: 10px;
+  right: 0;
+  border-radius: 10px;
+  background-color: beige;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-child > li {
+  list-style-type: none;
+  text-align: right;
+}
+
+.nav-child > li:nth-child(1) {
+  margin-top: 4px;
+}
+.nav-child > li:nth-child(2) {
+  margin-top: 10px;
+}
+.nav-child > li:nth-child(3) {
+  margin-top: 10px;
+}
+
+.link {
+  padding: 5px 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.link:hover {
+  background-color: grey;
+  color: white;
+}
+
+.person:hover .nav-child {
+  opacity: 1;
+  visibility: visible;
 }
