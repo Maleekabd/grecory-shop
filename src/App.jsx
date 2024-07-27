@@ -7,12 +7,14 @@ import Data from "./components/Products/DummyData.json";
 import ProductById from "./components/Products/ProductById";
 import Login from "./Pages/login";
 import Category from "./components/Category/Category";
+import Register from "./Pages/signup";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Register />} />
         <Route
           path="/"
           element={

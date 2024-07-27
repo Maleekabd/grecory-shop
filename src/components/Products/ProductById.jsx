@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Link, useParams } from "react-router-dom";
 import { formatCategory } from "../ProductByCategory/ProductByCategory";
 import slugify from "slugify";
@@ -30,7 +31,7 @@ const ProductById = ({ Datas }) => {
                     strict: true,
                   })}/${slugify(item.name, { lower: true })}`}
                 >
-                  {item.subcategory} &gt; {" "}
+                  {item.subcategory} &gt;{" "}
                 </Link>
                 <Link
                   className={text_color}
@@ -42,16 +43,28 @@ const ProductById = ({ Datas }) => {
                   {item.name}
                 </Link>
               </h1>
-              <div className="flex justify-between w-full">
-                <figure className="grid grid-cols-3 w-full gap-2">
+              <div className="flex min-[320px]:flex-col lg:flex-row justify-between  w-full">
+                <figure className="grid min-[320px]:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 w-full gap-2">
                   <img
                     className="col-span-3 h-72 w-full"
                     src={item.image}
                     alt=""
                   />
-                  <img className="col-span-1 h-44" src={item.image} alt="" />
-                  <img className="col-span-1  h-44" src={item.image} alt="" />
-                  <img className="col-span-1  h-44" src={item.image} alt="" />
+                  <img
+                    className="col-span-1 min-[320px]:h-20 md:h-44 lg:h-44"
+                    src={item.image}
+                    alt=""
+                  />
+                  <img
+                    className="col-span-1 min-[320px]:h-20 md:h-44 h-44"
+                    src={item.image}
+                    alt=""
+                  />
+                  <img
+                    className="col-span-1 min-[320px]:h-20 md:h-44 h-44"
+                    src={item.image}
+                    alt=""
+                  />
                 </figure>
 
                 {/*description */}
@@ -62,7 +75,22 @@ const ProductById = ({ Datas }) => {
                         <h1 className="text-xl">{item.name}</h1>
                         <h2 className="text-lg font-bold">$ {item.price}</h2>
                         <p>{item.description}</p>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique molestias repellendus a magni hic, nulla et reprehenderit doloribus consequatur voluptatem eos dolor nemo beatae tempore magnam, vel odit minima ipsum! Recusandae saepe eaque sed voluptatum aspernatur eveniet neque laudantium eum facilis porro ad ducimus at, ipsum dicta voluptatem vel, repudiandae aut in. Ea culpa quam blanditiis? Voluptatibus enim, porro, quasi excepturi voluptatem autem distinctio assumenda quos sapiente perferendis quae veritatis veniam error nobis vero placeat nulla magni odio officiis itaque magnam iste, fugiat eum. Aliquam accusamus quaerat iure dolorum recusandae unde! At quas dolor in architecto veniam et, non laudantium.
+                        <p>
+                          Lorem ipsum dolor, sit amet consectetur adipisicing
+                          elit. Similique molestias repellendus a magni hic,
+                          nulla et reprehenderit doloribus consequatur
+                          voluptatem eos dolor nemo beatae tempore magnam, vel
+                          odit minima ipsum! Recusandae saepe eaque sed
+                          voluptatum aspernatur eveniet neque laudantium eum
+                          facilis porro ad ducimus at, ipsum dicta voluptatem
+                          vel, repudiandae aut in. Ea culpa quam blanditiis?
+                          Voluptatibus enim, porro, quasi excepturi voluptatem
+                          autem distinctio assumenda quos sapiente perferendis
+                          quae veritatis veniam error nobis vero placeat nulla
+                          magni odio officiis itaque magnam iste, fugiat eum.
+                          Aliquam accusamus quaerat iure dolorum recusandae
+                          unde! At quas dolor in architecto veniam et, non
+                          laudantium.
                         </p>
                       </div>
                       <div className="flex items-center flex-col gap-1">

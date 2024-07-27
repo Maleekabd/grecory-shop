@@ -15,11 +15,11 @@ const ProductByCategory = ({ Datas }) => {
   return (
     <section className="h-auto">
       <div className="p-5">
-        <div className="m-10">
-          <h2 className="pb-5 text-3xl">
+        <div className="min-[320px]:mx-auto md:m-10 lg:m-10">
+          <h2 className="pb-5 min-[320px]:text-md min-[320px]:font-bold lg:text-3xl">
             {formattedCategory.toLocaleUpperCase()}
           </h2>
-          <div className="grid grid-cols-5 gap-4">
+          <div className="flex flex-wrap min-[320px]:gap-2 md:gap-4 lg:gap-4">
             {filteredProducts.map((product) => (
               <Link
                 to={`/category/${slugify(product.category, {
@@ -27,13 +27,13 @@ const ProductByCategory = ({ Datas }) => {
                   strict: true,
                 })}/${slugify(product.name, { lower: true })}`}
                 key={product.id}
-                className="hover:shadow-xl rounded-md flex justify-between flex-col h-auto relative border"
+                className="hover:shadow-xl rounded-md flex lg:justify-between flex-col h-auto relative border"
               >
                 {/* <div className="flex flex-col items-start">
                   <figure className="w-full"> */}
                 <img
                   className="object-cover rounded-md"
-                  style={{ height: "150px" }}
+                  style={{ width: "150px", height: "150px" }}
                   src={product.image}
                   alt={product.name}
                 />
