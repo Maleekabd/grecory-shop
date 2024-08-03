@@ -8,6 +8,7 @@ import ProductById from "./components/Products/ProductById";
 import Login from "./Pages/login";
 import Category from "./components/Category/Category";
 import Register from "./Pages/signup";
+import Cart from "./components/Cart/Cart";
 
 const App = () => {
   return (
@@ -26,6 +27,8 @@ const App = () => {
             </>
           }
         />
+
+        {/* Category by Name */}
         <Route
           path="/category/:name"
           element={
@@ -53,6 +56,15 @@ const App = () => {
             </>
           }
         /> */}
+        <Route
+          path="/cart"
+          element={
+            <>
+              <Navbar />
+              <Cart />
+            </>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

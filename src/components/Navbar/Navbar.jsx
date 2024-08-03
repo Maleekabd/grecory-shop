@@ -22,8 +22,12 @@ export const Navbar = () => {
         <Input />
         <ul className="flex list-none gap-5">
           <li className="relative">
-            <span className="absolute w-5 h-5 bg-emerald-400 rounded-full -top-2 -right-2 text-center">0</span>
-            <AiOutlineShoppingCart className="" size={`${size}`} />
+            <Link to={'/cart'}>
+              <span className="absolute w-5 h-5 bg-emerald-400 rounded-full -top-2 -right-2 text-center">
+                0
+              </span>
+              <AiOutlineShoppingCart className="" size={`${size}`} />
+            </Link>
           </li>
           <li className="cursor-pointer hover:text-emerald-400">
             <IoMdHeartEmpty size={`${size}`} />
