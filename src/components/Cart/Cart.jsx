@@ -1,5 +1,6 @@
 import Data from "../Products/DummyData.json";
 import { Link } from "react-router-dom";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 const Cart = () => {
   return (
@@ -34,7 +35,9 @@ const Cart = () => {
                     <td className="text-left">$ {data.price}</td>
                     <td className="text-center">
                       <h2 className="sr-only">delete</h2>
-                      <button>Delete</button>
+                      <button>
+                        <FaRegTrashAlt />
+                      </button>
                     </td>
                   </tr>
                 </>
@@ -49,7 +52,9 @@ const Cart = () => {
           <section>
             <h2>Subtotal</h2>
             <h2>Total</h2>
-            <button className="bg-emerald-700 hover:bg-emerald-500 text-white rounded p-2 w-full">Checkout</button>
+            <button className="bg-emerald-700 hover:bg-emerald-500 text-white rounded p-2 w-full">
+              Checkout
+            </button>
           </section>
         </section>
       </section>

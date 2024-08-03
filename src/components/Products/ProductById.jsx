@@ -94,10 +94,10 @@ const ProductById = ({ Datas }) => {
                         </p>
                       </div>
                       <div className="flex items-center flex-col gap-1">
-                        <button className="hover:bg-emerald-400 border border-emerald-300 w-full p-2">
+                        <button className="border border-emerald-300 w-full p-2 hover:font-bold">
                           Add To Cart
                         </button>
-                        <button className="bg-emerald-300 border border-emerald-300 w-full p-2 hover:bg-white hover:border hover:border-emerald-300">
+                        <button className="bg-emerald-300 border border-emerald-300 w-full p-2 hover:font-bold">
                           Buy
                         </button>
                       </div>

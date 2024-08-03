@@ -33,7 +33,7 @@ const ProductByCategory = ({ Datas }) => {
                   <figure className="w-full"> */}
                 <img
                   className="object-cover rounded-md"
-                  style={{ width: "150px", height: "150px" }}
+                  style={{ height: "150px" }}
                   src={product.image}
                   alt={product.name}
                 />
