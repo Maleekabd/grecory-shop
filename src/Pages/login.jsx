@@ -1,15 +1,33 @@
 import { useFormik } from "formik";
 import validate from "./Validate";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginFailed, loginSuccess } from "../redux/slices/authSlice";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const Formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     validate,
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: async (values) => {
+      try {
+        const { data } = await axios.post(
+          "http://localhost:3000/api/auth/login",
+          values
+        );
+        if (data) {
+          dispatch(loginSuccess({ user: data.username, token: data.token }));
+          navigate("/");
+        }
+      } catch (error) {
+        dispatch(loginFailed(error.response.data.message));
+      }
     },
   });
 
@@ -56,6 +74,9 @@ const Login = () => {
               Login
             </button>
           </form>
+          <h5>
+            Did not have an account ? <a href="/signup">register</a>
+          </h5>
         </div>
       </div>
     </section>

@@ -1,26 +1,71 @@
 import { useFormik } from "formik";
+import axios from "axios";
+import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
+
+  const validationSchemaUsingYup = Yup.object({
+    username: Yup.string().required("Username is required"),
+    email: Yup.string()
+      .email("Invalid Email Address")
+      .required("email is required"),
+    password: Yup.string()
+      .min(8, "password must be at least 8 char")
+      .required("password is required"),
+    confirmPassword: Yup.string()
+      .oneOf([Yup.ref("password"), null], "password must match")
+      .required("confirm password is required"),
+  });
+
   const formik = useFormik({
     initialValues: {
+      username: "",
       email: "",
       password: "",
       confirmPassword: "",
     },
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    validationSchema: validationSchemaUsingYup,
+    onSubmit: async (values) => {
+      try {
+        const { data } = await axios.post(
+          "http://localhost:3000/api/auth/register",
+          values
+        );
+
+        if (data) {
+          navigate("/login");
+        } else {
+          console.log("something went wrong");
+        }
+      } catch (error) {
+        console.error("registration error" + error.message);
+      }
     },
   });
 
-
-  console.log(formik.values)
-
   return (
-    <div className="w-full flex items-center justify-center h-screen">
-      <div className="bg-gray-100 w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
+    <div className="w-full p-5 flex items-center justify-center h-auto">
+      <div className="bg-gray-100 w-full max-w-lg p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
         <h1 className="text-2xl font-bold text-center">Register</h1>
-        <form noValidate="" action="" className="space-y-6">
+        <form
+          noValidate=""
+          onSubmit={formik.handleSubmit}
+          className="space-y-6"
+        >
           <div className="space-y-1 text-sm">
+            <label htmlFor="username" className="block dark:text-gray-600">
+              Username
+            </label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Username"
+              onChange={formik.handleChange}
+              className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+            />
             <label htmlFor="email" className="block dark:text-gray-600">
               Email
             </label>
@@ -62,7 +107,10 @@ const Register = () => {
               </a>
             </div>
           </div>
-          <button className="block w-full p-3 text-center border border-black hover:bg-emerald-200 hover:text-white hover:border-emerald-200 rounded-md dark:text-gray-50 dark:bg-violet-600">
+          <button
+            type="submit"
+            className="block w-full p-3 text-center border border-black hover:bg-emerald-200 hover:text-white hover:border-emerald-200 rounded-md dark:text-gray-50 dark:bg-violet-600"
+          >
             Sign in
           </button>
         </form>

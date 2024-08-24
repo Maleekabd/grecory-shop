@@ -3,14 +3,11 @@ import { Link, useParams } from "react-router-dom";
 import slugify from "slugify";
 
 const ProductByCategory = ({ Datas }) => {
-  const { name, id } = useParams();
+  const { name } = useParams();
   const formattedCategory = formatCategory(name);
   const filteredProducts = Datas.filter(
     (product) => product.category === formattedCategory
   );
-
-  console.log(formattedCategory);
-  console.log(filteredProducts);
 
   return (
     <section className="h-auto">
