@@ -1,9 +1,16 @@
 /* eslint-disable react/prop-types */
 import slugify from "slugify";
 import { Link, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../features/cart/cartSlice";
 
 const Product = ({ Datas }) => {
+  const dispatch = useDispatch();
   const { title } = useParams();
+
+  const handleAddToCart = (item) => {
+    dispatch(addToCart(item));
+  };
 
   return (
     <section className="h-auto">
@@ -17,7 +24,7 @@ const Product = ({ Datas }) => {
                   to={`/category/${slugify(item.category, {
                     strict: true,
                     lower: true,
-                  })}/${slugify(item.name, {strict:true, lower:true})}`}
+                  })}/${slugify(item.name, { strict: true, lower: true })}`}
                   key={item.id}
                   className="hover:shadow-xl rounded-md flex justify-between flex-col h-auto relative border"
                   //   style={{
@@ -27,19 +34,22 @@ const Product = ({ Datas }) => {
                   <img
                     loading="lazy"
                     style={{
-                      objectFit:"cover",
+                      objectFit: "cover",
                       height: "150px",
                     }}
                     src={item.image}
                     alt=""
-                  className="rounded-md"
+                    className="rounded-md"
                   />
                   <h1 className="p-2 text-sm">{item.name}</h1>
                   <p className="p-2 pt-0 font-bold">$ {item.price}</p>
                   <div className="m-3">
-                  <button className="rounded-md text-white  bg-emerald-600 w-full text-sm p-2 ">
-                    Add
-                  </button>
+                    <button
+                      onClick={() => handleAddToCart(item)}
+                      className="rounded-md text-white  bg-emerald-600 w-full text-sm p-2 "
+                    >
+                      Add
+                    </button>
                   </div>
                 </Link>
               ))}

@@ -3,7 +3,7 @@ import validate from "./Validate";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { loginFailed, loginSuccess } from "../redux/slices/authSlice";
+import { loginFailed, loginSuccess } from "../features/auth/authSlice";
 
 const Login = () => {
   const dispatch = useDispatch();

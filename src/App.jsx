@@ -9,6 +9,9 @@ import Login from "./Pages/login";
 import Category from "./components/Category/Category";
 import Register from "./Pages/signup";
 import Cart from "./components/Cart/Cart";
+import Checkout from "./components/Order/OrderInfo";
+import Footer from "./Pages/Footer";
+import Profile from "./components/profile/Profile";
 
 const App = () => {
   return (
@@ -24,6 +27,7 @@ const App = () => {
               <LandingPage />
               <Category />
               <Product Datas={Data} />
+              <Footer />
             </>
           }
         />
@@ -62,6 +66,24 @@ const App = () => {
             <>
               <Navbar />
               <Cart />
+            </>
+          }
+        />
+        <Route
+          path="/checkout"
+          element={
+            <>
+              <Navbar />
+              <Checkout />
+            </>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <>
+              <Navbar />
+              <Profile />
             </>
           }
         />

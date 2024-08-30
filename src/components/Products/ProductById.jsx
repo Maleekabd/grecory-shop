@@ -2,13 +2,24 @@
 import { Link, useParams } from "react-router-dom";
 import { formatCategory } from "../ProductByCategory/ProductByCategory";
 import slugify from "slugify";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../features/cart/cartSlice";
+import { toast } from "react-toastify";
+toast;
 
 const ProductById = ({ Datas }) => {
   const { id } = useParams();
+
+  const dispatch = useDispatch();
   const formattedCategory = formatCategory(id);
 
   const getPath = window.location.pathname.includes(`${id}`);
   const text_color = getPath ? "text-emerald-400" : "";
+
+  // handle submit
+  const handleAddToCart = (item) => {
+    dispatch(addToCart(item));
+  };
 
   return (
     <section className="h-auto">
@@ -94,7 +105,10 @@ const ProductById = ({ Datas }) => {
                         </p>
                       </div>
                       <div className="flex items-center flex-col gap-1">
-                        <button className="border border-emerald-300 w-full p-2 hover:font-bold">
+                        <button
+                          onClick={() => handleAddToCart(item)}
+                          className="border border-emerald-300 w-full p-2 hover:font-bold"
+                        >
                           Add To Cart
                         </button>
                         <button className="bg-emerald-300 border border-emerald-300 w-full p-2 hover:font-bold">
