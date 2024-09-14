@@ -7,7 +7,7 @@ import { addToCart } from "../../features/cart/cartSlice";
 import { toast } from "react-toastify";
 toast;
 
-const ProductById = ({ Datas }) => {
+const ProductById = (children) => {
   const { id } = useParams();
 
   const dispatch = useDispatch();

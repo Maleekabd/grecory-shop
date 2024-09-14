@@ -14,7 +14,6 @@ const IconCategory = [
   { id: 6, name: "Vegetables", Icon: Vegetables },
 ];
 
-console.log(IconCategory);
 const Category = () => {
   return (
     <div className="p-5">

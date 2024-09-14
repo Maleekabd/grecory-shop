@@ -11,6 +11,7 @@ import Grocery from "../../../public/grocery.png";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Logout } from "../../features/auth/authSlice";
+import { useState } from "react";
 
 const size = 35;
 
@@ -19,13 +20,20 @@ export const Navbar = () => {
   const currentUser = useSelector((state) => state.auth);
   const getCartData = useSelector((state) => state.cart);
 
+
+  const [searchterm, setSearchTerm] = useState("");
+
+  const handleSearch = (item) => {
+    setSearchTerm(item);
+  }
+
     return (
     <header className="bg-white sticky top-0 z-10 pt-0 px-0 pb-2">
       <nav className="flex sm:flex-wrap md:flex-wrap lg:flex-nowrap justify-between items-center p-5">
         <a href="/" className="w-1/6 flex justify-center items-center">
           <img src={Grocery} className="w-14" alt="logo" />
         </a>
-        <Input />
+        <Input onSearch={handleSearch}/>
         <ul className="flex list-none gap-5">
           <li className="relative cursor-pointer hover:text-emerald-400">
             <Link to={"/cart"}>
@@ -36,7 +44,7 @@ export const Navbar = () => {
                     : 0}
                 </span>
                 <AiOutlineShoppingCart className="" size={`${size}`} />
-                <h1>Cart</h1>
+                <h1>Cart</h1>``
               </div>
             </Link>
           </li>

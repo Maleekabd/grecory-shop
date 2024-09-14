@@ -12,10 +12,12 @@ import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Order/OrderInfo";
 import Footer from "./Pages/Footer";
 import Profile from "./components/profile/Profile";
+import SearchResult from "./components/Products/searchResult";
 
 const App = () => {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} />
@@ -23,7 +25,6 @@ const App = () => {
           path="/"
           element={
             <>
-              <Navbar />
               <LandingPage />
               <Category />
               <Product Datas={Data} />
@@ -37,7 +38,6 @@ const App = () => {
           path="/category/:name"
           element={
             <>
-              <Navbar />
               <ProductByCategory Datas={Data} />
             </>
           }
@@ -46,8 +46,15 @@ const App = () => {
           path="/category/:name/:id"
           element={
             <>
-              <Navbar />
               <ProductById Datas={Data} />
+            </>
+          }
+        />
+        <Route
+          path="/search"
+          element={
+            <>
+              <SearchResult />
             </>
           }
         />
