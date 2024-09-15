@@ -8,11 +8,11 @@ This project is a shop, built using modern web technologies to ensure a scalable
 3. Redux
    
 ## Features
-State Management: Global state management with Redux for better scalability.
-Component-based Structure: Modular React components for better maintainability.
+1. State Management: Global state management with Redux for better scalability
+2. Component-based Structure: Modular React components for better maintainability.
 
 ## Folder Structure
-/src: Contains all the source code, including components, reducers, and styles.
-/src/components: React components.
-/src/features: All Redux related files including actions, reducers, and store.
-/src/styles: TailwindCSS configuration and custom styles.
+1. /src: Contains all the source code, including components, reducers, and styles.
+2. /src/components: React components.
+3. /src/features: All Redux related files including actions, reducers, and store.
+4. /src/styles: TailwindCSS configuration and custom styles.
