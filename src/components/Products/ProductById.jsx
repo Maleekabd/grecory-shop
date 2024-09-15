@@ -6,8 +6,9 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/cart/cartSlice";
 import { toast } from "react-toastify";
 toast;
+import Datas from "./DummyData.json";
 
-const ProductById = (children) => {
+const ProductById = () => {
   const { id } = useParams();
 
   const dispatch = useDispatch();

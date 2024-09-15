@@ -44,20 +44,9 @@ const App = () => {
         />
         <Route
           path="/category/:name/:id"
-          element={
-            <>
-              <ProductById Datas={Data} />
-            </>
-          }
+          element={<ProductById Datas={Data} />}
         />
-        <Route
-          path="/search"
-          element={
-            <>
-              <SearchResult />
-            </>
-          }
-        />
+        <Route path="/search" element={<SearchResult />} />
         {/* <Route
           path="/category/:name/:id/:title"
           element={
@@ -67,33 +56,9 @@ const App = () => {
             </>
           }
         /> */}
-        <Route
-          path="/cart"
-          element={
-            <>
-              <Navbar />
-              <Cart />
-            </>
-          }
-        />
-        <Route
-          path="/checkout"
-          element={
-            <>
-              <Navbar />
-              <Checkout />
-            </>
-          }
-        />
-        <Route
-          path="/profile"
-          element={
-            <>
-              <Navbar />
-              <Profile />
-            </>
-          }
-        />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );
