@@ -1,8 +1,18 @@
-# React + Vite
+# Grocery Shop
+Overview
+This project is a shop, built using modern web technologies to ensure a scalable, responsive, and efficient web application.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tech Stack
+1. ReactJS.
+2. TailwindCSS
+3. Redux
+   
+## Features
+State Management: Global state management with Redux for better scalability.
+Component-based Structure: Modular React components for better maintainability.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Folder Structure
+/src: Contains all the source code, including components, reducers, and styles.
+/src/components: React components.
+/src/features: All Redux related files including actions, reducers, and store.
+/src/styles: TailwindCSS configuration and custom styles.
